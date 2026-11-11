@@ -1,5 +1,5 @@
 ---
-title: "Lab 07 - Modelling course evaluations"
+title: "Lab 07 - Modelling earnings and course evaluations"
 author: "INSERT NAME HERE"
 date: "`r Sys.Date()`"
 output: html_document
@@ -13,6 +13,52 @@ library(tidymodels)
 
 ```
 
+## Data set: college recent grads
+
+```{r, warning=FALSE, message=FALSE}
+library(fivethirtyeight)
+college_grad_df <- college_recent_grads
+# First look at your data set
+glimpse(college_grad_df)
+```
+
+
+# Exercise 1: Exploratory Data Analysis
+
+```{r}
+#your code here
+```
+
+*Your explanation*
+
+
+# Exercise 2: Exploring relationship
+
+```{r}
+#your code here
+```
+
+*Your explanation*
+
+# Exercise 3: Fit and interpret a numerical predictor
+
+```{r}
+#your code here
+```
+
+*Your explanation*
+
+# Exercise 4: Consider a categorical variable instead 
+
+```{r}
+#your code here
+```
+
+*Your explanation*
+
+---
+
+## Data set: Beauty in the classroom
 
 ```{r read-data}
 evals<-read.csv("data/evals.csv", row.names=1)
