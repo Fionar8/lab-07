@@ -27,23 +27,51 @@ glimpse(college_grad_df)
 
 ```{r}
 #your code here
+#frequency table for major categories
+college_grad_df %>% count(major_category)
+
+#Code for histogram
+ggplot(data = college_grad_df,
+       mapping = aes(x = median)) +
+  geom_histogram(bins = 30) +
+  labs(
+    x = "Median of earnings",
+    y = "major categories",
+    title = "Median earnings for each major cateogry"
+  )
+
 ```
 
-*Your explanation*
+The shape of the distribution is a bell shaped curve slighlty off centre (to the left).
 
 
 # Exercise 2: Exploring relationship
 
 ```{r}
 #your code here
+ggplot(data = college_grad_df,
+       mapping = aes(x = sharewomen,
+                     y = median)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              se = FALSE) +
+  labs(
+    title = "Median earnings in majors with higher share of women",
+    x = "Sharewomen",
+    y = "Median earnings"
+  )
+
 ```
 
-*Your explanation*
+The response variable is the median earnings and the explanatory variable is sharewomen. The trend seen on the graph implies that as the number of sharewomen increases the median earnings decrease.
 
 # Exercise 3: Fit and interpret a numerical predictor
 
 ```{r}
 #your code here
+
+
+
 ```
 
 *Your explanation*
