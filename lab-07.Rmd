@@ -69,12 +69,27 @@ The response variable is the median earnings and the explanatory variable is sha
 
 ```{r}
 #your code here
+share_fit <- linear_reg() %>%
+  set_engine("lm") %>%
+  fit(median ~ sharewomen,
+      data = college_grad_df) 
+share_fit %>%
+tidy() 
 
+share_fit_aug <- augment(share_fit$fit)
+
+ggplot(share_fit_aug, mapping = aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.5) +
+  geom_hline(yintercept = 0, colour = "black", lty = "dashed") +
+  labs(
+    x = "Predicted median",
+    y = "Residules"
+  )
 
 
 ```
 
-*Your explanation*
+median earnings = 56093.31 - 30669.94	x sharewomen 
 
 # Exercise 4: Consider a categorical variable instead 
 
